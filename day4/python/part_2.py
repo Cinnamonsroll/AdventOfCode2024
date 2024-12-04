@@ -1,6 +1,3 @@
-def is_valid(x, y, grid):
-    return 0 <= x < len(grid) and 0 <= y < len(grid[0])
-
 def count_xmas(grid):
     ret = 0
     rows = len(grid)
