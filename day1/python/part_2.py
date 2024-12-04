@@ -1,20 +1,13 @@
-from collections import Counter
+from utils import read_lines, count_frequency
+lines = read_lines("input.txt")
+left_list = []
+right_list = []
+for line in lines:
+    left, right = map(int, line.split())
+    left_list.append(left)
+    right_list.append(right)
+right_counts = count_frequency(right_list)
+similarity_score = sum(left * right_counts.get(left, 0) for left in left_list)
 
-input_file = "input.txt"
-
-with open(input_file, 'r') as file:
-    left_list = []
-    right_list = []
-    
-    for line in file:
-        left, right = map(int, line.split())
-        left_list.append(left)
-        right_list.append(right)
-
-right_counts = Counter(right_list)
-
-similarity_score = 0
-for num in left_list:
-    similarity_score += num * right_counts[num]
 
 print(similarity_score)
