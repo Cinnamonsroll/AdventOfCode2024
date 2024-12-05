@@ -1,0 +1,1 @@
+print(sum(1 for line in open('input.txt') if (lambda nums: (lambda is_safe: is_safe(nums) or any(is_safe(nums[:i] + nums[i+1:]) for i in range(len(nums))))(lambda x: all(1 <= d <= 3 for d in [x[i]-x[i-1] for i in range(1,len(x))]) or all(-3 <= d <= -1 for d in [x[i]-x[i-1] for i in range(1,len(x))])))([int(x) for x in line.split()])))

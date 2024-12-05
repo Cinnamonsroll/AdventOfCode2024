@@ -1,0 +1,1 @@
+print(sum(sorted([update[i] for i in range(len(update)) if not any(update[j] in update[i] for j in range(i))], reverse=True)[len(update) // 2] for update in [[int(x) for x in line.split(',')] for line in open("input.txt").read().split("\n\n")[1].splitlines()] for rules in [[tuple(map(int, rule.split('|'))) for rule in open("input.txt").read().split("\n\n")[0].splitlines()]]]))

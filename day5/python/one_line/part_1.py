@@ -1,0 +1,1 @@
+print(sum(update[len(update)//2] for update in [list(map(int, line.split(','))) for line in open('input.txt').read().split('\n\n')[1].splitlines()] if all(a not in update or b not in update or update.index(a) <= update.index(b) for a, b in [tuple(map(int, rule.split('|'))) for rule in open('input.txt').read().split('\n\n')[0].splitlines()])))

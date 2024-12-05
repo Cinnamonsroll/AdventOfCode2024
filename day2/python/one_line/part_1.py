@@ -1,0 +1,1 @@
+print(sum(1 for line in open('input.txt') if (lambda nums: all(1 <= d <= 3 for d in [nums[i]-nums[i-1] for i in range(1,len(nums))]) or all(-3 <= d <= -1 for d in [nums[i]-nums[i-1] for i in range(1,len(nums))]))([int(x) for x in line.split()])))

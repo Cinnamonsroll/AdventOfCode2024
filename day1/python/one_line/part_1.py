@@ -1,0 +1,1 @@
+print(sum(abs(l - r) for l, r in zip(sorted([int(line.split()[0]) for line in open('input.txt')]), sorted([int(line.split()[1]) for line in open('input.txt')]))))

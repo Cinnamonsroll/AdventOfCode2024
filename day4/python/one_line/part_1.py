@@ -1,0 +1,1 @@
+print(sum(1 for r, line in enumerate(open('input.txt')) for c in range(len(line.strip())) for dr, dc in [(-1,0),(1,0),(0,-1),(0,1),(-1,-1),(-1,1),(1,-1),(1,1)] if all(0<=r+dr*i<len(open('input.txt').readlines()) and 0<=c+dc*i<len(line.strip()) and open('input.txt').readlines()[r+dr*i][c+dc*i]=="XMAS"[i] for i in range(4))))
